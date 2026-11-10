@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#100d10"><title>Império Dourado</title>
+<style>
+:root{--bg:#100d10;--panel:#1b1518;--panel2:#25191c;--red:#a7192b;--red2:#6d0e1c;--gold:#e9bd59;--gold2:#ffe5a0;--text:#fff4df;--muted:#bda99a}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#34131b 0,#100d10 48%);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+header{padding:18px 16px 14px;background:#100d10ed;border-bottom:1px solid #634321;position:sticky;top:0;z-index:3}
+.top{max-width:760px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:10px}.brand{font-weight:950;letter-spacing:1px;color:var(--gold);font-size:clamp(18px,4vw,24px)}.tag{font-size:10px;color:var(--muted);letter-spacing:2px}
+.pill{border:1px solid #8e6b35;color:var(--gold2);border-radius:30px;padding:7px 10px;font-size:11px;font-weight:800}
+.wrap{max-width:760px;margin:18px auto 90px;padding:0 14px}
+.hero{position:relative;overflow:hidden;border:1px solid #8a642d;border-radius:20px;background:linear-gradient(120deg,#5a0c19,#1d1015 72%);padding:20px;min-height:210px;display:flex;align-items:center;gap:12px;box-shadow:0 12px 35px #0008}
+.hero-copy{position:relative;z-index:1;max-width:65%}.hero h1{font-size:26px;line-height:1.1;color:var(--gold2);margin:6px 0 9px}.hero p{font-size:13px;color:#f4dcbf;line-height:1.45;margin:0 0 12px}.tiger{font-size:88px;filter:drop-shadow(0 8px 12px #000);margin-left:auto}
+.eyebrow{font-size:10px;letter-spacing:2px;color:var(--gold);font-weight:800}
+.balance{margin-top:14px;background:linear-gradient(135deg,#241a17,#181316);border:1px solid #76552c;border-radius:16px;padding:15px;display:flex;justify-content:space-between;align-items:center;gap:10px}.balance small{display:block;color:var(--muted);font-size:11px}.amount{font-size:25px;color:var(--gold2);font-weight:900}.wallet-actions{display:flex;gap:7px}.btn{border:0;border-radius:11px;padding:11px 13px;font-weight:850;font-size:12px;cursor:pointer}.gold{background:linear-gradient(135deg,#bd842d,#f5d77f);color:#35170d}.outline{background:#2a1a1d;color:var(--gold2);border:1px solid #86612e}
+nav{position:fixed;bottom:0;left:0;right:0;z-index:4;background:#120e11f5;border-top:1px solid #6d4a27;display:flex;justify-content:center;padding:8px 5px calc(8px + env(safe-area-inset-bottom));backdrop-filter:blur(12px)}
+nav button{flex:1;max-width:150px;background:transparent;color:#bba99a;font-size:11px;padding:8px 2px;border:0}nav button.active{color:var(--gold2)}nav span{display:block;font-size:19px;margin-bottom:2px}
+.panel{background:linear-gradient(145deg,#21181b,#171216);border:1px solid #4b3430;border-radius:17px;padding:17px;margin-top:14px}
+h2{font-size:18px;color:var(--gold2);margin:0 0 13px}.muted{font-size:13px;color:var(--muted);line-height:1.5}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.game{background:linear-gradient(145deg,#45121c,#211418);border:1px solid #80552c;border-radius:14px;padding:14px;min-height:110px}.game .ico{font-size:28px}.game b{display:block;color:var(--gold2);margin:5px 0}.game small{color:#c7aa8d}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid #392a29}.row:last-child{border:0}
+.field{width:100%;background:#100d10;color:var(--text);border:1px solid #6c4b2b;border-radius:10px;padding:12px;font:inherit;margin:7px 0 12px}
+.notice{background:#2c2018;border-left:3px solid var(--gold);padding:11px;border-radius:8px;color:#e8d5b7;font-size:12px;line-height:1.5;margin-top:12px}
+.hidden{display:none!important}footer{text-align:center;color:#806e61;font-size:10px;padding:20px}
+@media(max-width:430px){.hero{min-height:190px;padding:15px}.hero h1{font-size:22px}.tiger{font-size:70px}.balance{align-items:flex-start;flex-direction:column}.wallet-actions{width:100%}.wallet-actions button{flex:1}.cards{gap:8px}}
+</style></head>
+<body>
+<header><div class="top"><div><div class="brand">🐅 IMPÉRIO DOURADO</div><div class="tag">FORÇA • DESAFIO • CONQUISTA</div></div><div class="pill">MODO DEMO</div></div></header>
+<main class="wrap">
+<section id="inicio">
+ <div class="hero"><div class="hero-copy"><div class="eyebrow">SEJA BEM-VINDO AO IMPÉRIO</div><h1>A força do tigre está com você</h1><p>Entre nos desafios, aprenda e conquiste pontos de demonstração.</p><button class="btn gold" onclick="show('jogos')">Explorar jogos</button></div><div class="tiger" aria-label="Tigre dourado">🐅</div></div>
+ <div class="balance"><div><small>SALDO DE PONTOS VIRTUAIS</small><div class="amount">🪙 <span class="coins">1.000</span></div></div><div class="wallet-actions"><button class="btn gold" onclick="show('carteira')">＋ Adicionar</button><button class="btn outline" onclick="show('carteira')">↗ Resgatar</button></div></div>
+ <div class="panel"><h2>⭐ Destaques do Império</h2><div class="cards"><div class="game"><div class="ico">🧠</div><b>Desafio do Tigre</b><small>Teste seus conhecimentos</small></div><div class="game"><div class="ico">🏆</div><b>Ranking</b><small>Veja a classificação</small></div></div></div>
+ <div class="notice">Tudo aqui é simulado: não há apostas, dinheiro real, PIX, depósitos bancários, saques financeiros ou prêmios.</div>
+</section>
+<section id="jogos" class="hidden">
+ <div class="panel"><h2>🐅 Desafio do Tigre</h2><p class="muted">Qual animal aparece na bandeira de uma equipe esportiva chamada “Tigres”?</p>
+ <div id="answers"><button class="btn outline answer" data-correct="true" style="width:100%;margin:5px 0">Tigre</button><button class="btn outline answer" style="width:100%;margin:5px 0">Golfinho</button><button class="btn outline answer" style="width:100%;margin:5px 0">Coelho</button></div>
+ <div id="feedback" class="notice hidden" aria-live="polite"></div><button id="again" class="btn gold hidden" style="margin-top:12px">Nova rodada</button><p class="muted">Resposta correta: +100 pontos virtuais. Uma pontuação por rodada.</p></div>
+</section>
+<section id="ranking" class="hidden"><div class="panel"><h2>🏆 Ranking imperial</h2><div class="row"><span>🥇 DragãoDourado</span><b>9.500</b></div><div class="row"><span>🥈 Imperador7</span><b>8.200</b></div><div class="row"><span>🥉 Lenda888</span><b>7.100</b></div><div class="row"><span>🐅 Você</span><b class="coins">1.000</b></div><p class="muted">Ranking ilustrativo desta demonstração.</p></div></section>
+<section id="carteira" class="hidden"><div class="panel"><h2>🪙 Carteira de demonstração</h2><p class="muted">Seu saldo é composto apenas por pontos fictícios. Não é dinheiro e não pode ser convertido ou transferido.</p><div class="balance"><div><small>SALDO ATUAL</small><div class="amount"><span class="coins">1.000</span> 🪙</div></div></div>
+ <h2 style="margin-top:18px">＋ Adicionar pontos</h2><p class="muted">Receba um pacote gratuito de pontos para testar a interface.</p><button class="btn gold" id="add">Adicionar 500 pontos grátis</button>
+ <h2 style="margin-top:22px">↗ Resgatar pontos</h2><p class="muted">Use esta opção para simular a troca de pontos por um emblema de perfil. Nenhum valor é pago.</p><button class="btn outline" id="redeem">Resgatar 200 pontos por emblema demo</button><div id="walletMsg" class="notice hidden" aria-live="polite"></div>
+ <div class="notice">Os botões “Adicionar” e “Resgatar” são apenas demonstrações internas. Não solicitamos chave PIX, conta bancária ou dados de pagamento.</div></div></section>
+<section id="perfil" class="hidden"><div class="panel"><h2>👤 Perfil do jogador</h2><div class="row"><span>Nome</span><b>Visitante</b></div><div class="row"><span>Nível</span><b id="level">Aprendiz</b></div><div class="row"><span>Pontos</span><b class="coins">1.000</b></div><p class="muted">Este protótipo não cria contas nem coleta dados pessoais. A pontuação fica salva somente neste aparelho.</p><button class="btn outline" id="reset">Reiniciar demonstração</button></div></section>
+<footer>IMPÉRIO DOURADO • PROTÓTIPO DE ENTRETENIMENTO<br>Moedas e pontos sem valor financeiro.</footer>
+</main>
+<nav><button class="active" data-tab="inicio"><span>⌂</span>Início</button><button data-tab="jogos"><span>🎮</span>Jogos</button><button data-tab="carteira"><span>🪙</span>Carteira</button><button data-tab="ranking"><span>🏆</span>Ranking</button><button data-tab="perfil"><span>👤</span>Perfil</button></nav>
+<script>
+let coins=Number(localStorage.getItem('imperioCoins')||1000),done=false;
+const $=id=>document.getElementById(id);
+function render(){document.querySelectorAll('.coins').forEach(x=>x.textContent=coins.toLocaleString('pt-BR'));$('level').textContent=coins>=1500?'Explorador':coins>=1200?'Discípulo':'Aprendiz';localStorage.setItem('imperioCoins',String(coins))}
+function show(tab){document.querySelectorAll('main section').forEach(s=>s.classList.toggle('hidden',s.id!==tab));document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));window.scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>show(b.dataset.tab)));
+document.querySelectorAll('#answers button').forEach(b=>b.addEventListener('click',()=>{if(done)return;done=true;if(b.dataset.correct==='true'){coins+=100;render();$('feedback').textContent='Excelente! Você ganhou 100 pontos virtuais.'}else{$('feedback').textContent='Boa tentativa! A resposta era Tigre.'}$('feedback').classList.remove('hidden');document.querySelectorAll('#answers button').forEach(x=>x.disabled=true);$('again').classList.remove('hidden')}));
+$('again').addEventListener('click',()=>{done=false;$('feedback').classList.add('hidden');$('again').classList.add('hidden');document.querySelectorAll('#answers button').forEach(x=>x.disabled=false)});
+$('add').addEventListener('click',()=>{coins+=500;render();$('walletMsg').textContent='500 pontos de demonstração adicionados. Nenhum pagamento foi feito.';$('walletMsg').classList.remove('hidden')});
+$('redeem').addEventListener('click',()=>{if(coins<200){$('walletMsg').textContent='Você precisa de pelo menos 200 pontos para testar este resgate.'}else{coins-=200;render();$('walletMsg').textContent='Resgate demonstrativo concluído: emblema fictício registrado nesta simulação.'}$('walletMsg').classList.remove('hidden')});
+$('reset').addEventListener('click',()=>{coins=1000;render();show('inicio')});render();
+</script></body></html>
